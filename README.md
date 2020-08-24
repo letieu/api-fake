@@ -1,7 +1,7 @@
 
 #  Easy tool to fake API server for front-end dev 
 
-  [Link Online use ](http://apifake.herokuapp.com)  ( Heroku )
+  [Link Online use ](http://api-fake.herokuapp.com)  ( Heroku )
 
  1. ## Easy to use:
         a. Login with github account 
