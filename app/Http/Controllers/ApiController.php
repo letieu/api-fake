@@ -17,7 +17,17 @@ class ApiController extends Controller
         return view('index',compact('apis'));
     }
 
+    public function edit($id)
+    {
+        try {
+            $api = Api::find($id);
 
+        } catch (\Exception $e) {
+            return false;
+        }
+
+        return view('edit',compact('api'));
+    }
 
     public function store(Request $request)
     {
@@ -39,9 +49,14 @@ class ApiController extends Controller
     public function update(Request $request, $id)
     {
         $api = Api::find($id);
-        $api->update($request->all());
+        $api->method = $request->get('method');
+        $api->entry = $request->get('entry');
+        $api->data = $request->get('data');
 
-        return  redirect()->route('index');
+        $api->save();
+
+        return response()->json($api);
+
     }
 
 
@@ -50,7 +65,7 @@ class ApiController extends Controller
         $api = Api::find($id);
         $api->delete();
 
-        return  redirect()->route('index');
+        return  response()->json('ok');
     }
 
     public function go(\Illuminate\Http\Request $request,$github_id) {
