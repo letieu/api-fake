@@ -10,10 +10,18 @@
        
   2. ## Use offline via docker
 	  a. Clone  [Docker version ](https://github.com/letieu/fake-api)
+      
 	  b. `cd fake-api`
+      
       c.  `sudo docker-compose up`
+      
       d. `sudo docker-compose run php sh`
+      
       e. `composer install`
+      
       f. `chmod 777 -R storage &&
+      
       chmod 777 -R bootstrap/cache`
-      g. `localhost:4567`  is default host        
+      
+      g. `localhost:4567`  is default host    
+      
